@@ -1,0 +1,24 @@
+name = input<string>();
+this is a signal based input 
+
+normal signal vs signal based input 
+count=signal(0);
+this child is owner of this 
+this.count.set(10);
+
+child can change the value;
+
+name=input<string>();
+child normally name ko khud update nai kr skta because this is a prop
+
+<app-users [name]="userName"></app-users>
+
+
+
+now suppose do this 
+userName=signal('Arslan');
+and do this 
+<app-users [name]="userName"></app-users>
+
+name = input<WritableSignal<string>>(); now signal is passed as prop
+

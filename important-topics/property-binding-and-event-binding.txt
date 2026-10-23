@@ -1,0 +1,39 @@
+Property binding binds component data to DOM.
+
+<input [value]='userName'>
+
+<button class='' disabled >Click Me</button> 
+what if I want to disabled it dynamically How I will do that.
+
+export class App{
+    btnDisabled=true;
+}
+
+<button class='' [disabled]="btnDisabled" >Click Me</button> 
+with Property binding you dont need to use interpolation just []="property Name"
+ 
+<img src="{{url}}">
+<img [src]="url"> 
+
+Property binding is much more usefull when you dealing with actual properties and non string values.
+
+
+Event binding: 
+            Event binding allows and Html event to call a method in your Angular Component.
+        
+(event)="method()"
+
+sayHello() {
+  console.log('Hello!');
+}
+
+<button (click)='sayHello()'>Click Me</button>
+
+
+
+Two Way binding: 
+                Two way binding means UI and component both can update each other data.
+syntax [(ngModel)]
+name='Arslan';
+<input [(ngModal)]="name">
+<p></p>

@@ -1,0 +1,45 @@
+class Parent{
+    userName='Arslan';
+}
+
+class Children{
+    name=input<string>(); means name will be passed as props.
+}   
+
+when parent will use the child he be like
+<app-child [name]="userName"><app-child>
+
+
+how parent will pass objects and functions as props;
+ export class app{
+    user={
+        name='Arslan',
+        age:27,
+        role:'Developer'
+    }
+ }
+ 
+ export class Users{
+    user=input<any>();
+ }
+
+ <app-users [user]="user"></app-users>
+
+
+ function as prop
+            In react we do like 
+                <User deleteUser={deleteUser}>
+but in angular to pass function as props we have to use output() function in the child
+
+export class App{
+    deleteUser(id:number){
+        console.log('Delete',id);
+    }   
+};
+export class Users{
+    deleteUser=output(number)();
+    removeUser() {
+    this.deleteUser.emit(10);
+  }
+}
+<app-users (deleteUser)="deleteUser($event)"></app-users>

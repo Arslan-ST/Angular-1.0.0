@@ -1,0 +1,148 @@
+🧠 Angular Learning Roadmap
+
+Phase 1 — Angular Fundamentals
+
+Angular project structure
+Components
+Templates
+Interpolation
+Property binding
+Event binding
+Two-way binding
+Component lifecycle
+
+➡️ Test #1
+
+Phase 2 — Modern Angular State
+
+Signals
+signal()
+.set()
+.update()
+computed()
+effect()
+Signal-based inputs
+
+➡️ Test #2
+
+Phase 3 — Templates
+
+@if
+@else
+@for
+@switch
+@empty
+Template expressions
+ng-container
+Template reference variables
+
+➡️ Test #3
+
+Phase 4 — Component Communication
+
+Parent → Child
+Child → Parent
+input()
+output()
+Two-way component communication
+Sharing state between components
+
+➡️ Test #4
+
+Phase 5 — Services & Dependency Injection
+
+Services
+@Injectable
+Dependency Injection
+Providers
+inject()
+Singleton services
+Service-based state
+
+➡️ Test #5
+
+Phase 6 — Routing
+
+Routes
+routerLink
+Router
+Route parameters
+Query parameters
+Nested routes
+Lazy loading
+Route guards
+
+➡️ Test #6
+
+Phase 7 — Forms
+
+Template-driven forms
+Reactive forms
+FormControl
+FormGroup
+Validators
+Custom validators
+Dynamic forms
+Form submission/error handling
+
+➡️ Test #7
+
+Phase 8 — HTTP & APIs
+
+HttpClient
+GET
+POST
+PUT/PATCH
+DELETE
+Headers
+Query parameters
+Error handling
+Loading states
+Interceptors
+
+➡️ Test #8
+
+Phase 9 — RxJS
+
+Observable
+Subscription
+Operators
+map
+filter
+tap
+switchMap
+mergeMap
+catchError
+debounceTime
+Subjects
+BehaviorSubject
+
+➡️ Test #9
+
+Phase 10 — Advanced Angular
+
+Lifecycle hooks
+Content projection
+Directives
+Pipes
+Custom pipes
+Dynamic components
+Lazy loading
+Change detection
+Performance
+@defer
+
+➡️ Test #10
+
+Phase 11 — Real-world Angular
+
+Authentication
+JWT
+Guards
+Interceptors
+Permissions
+API architecture
+State management
+Error handling
+Folder architecture
+Reusable components

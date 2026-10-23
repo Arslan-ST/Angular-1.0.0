@@ -1,0 +1,71 @@
+
+Signal is reactive state container of angular.
+import {signal}
+export class App{
+    count=signal(0);
+};
+<p>Count: {{count()}}</p>
+
+count() // to read the current value of signal.
+
+how to change value
+increae(){
+    this.count.set(this.count()+1);
+}
+we will use set function of signal to update a signal;
+
+there are two other things are also.
+                                    computed() and effect();
+computed()=derived value;
+
+lets count=signal(10);
+and you have to calculate a different value
+doubleCount=computed(()=>this.count()*2);
+
+<p>{{count()}}</p>
+<p>{{doubleCount()}}</p>
+
+
+price = signal(100);
+quantity = signal(3);
+discount = signal(10);
+
+without computed imagine hamay yeh calculation 100 places pr krni ha to hum to likh likh kr thak jain gay 
+<p>{{ price() * quantity() * (1 - discount() / 100) }}</p>
+
+<span>{{ price() * quantity() * (1 - discount() / 100) }}</span>
+
+<div>{{ price() * quantity() * (1 - discount() / 100) }}</div> 
+
+here comes the computed
+total=computed(()=>{
+    return this.price()*this.quantity()*(1-this.discount()/100);
+}) now any of the signal change we will get the active value
+
+effect is that if any 
+
+username=signal('Arslan');
+effect(()=>{
+    console.log('Username',this.username());
+}) now every time signal change the effect will run.
+
+but if we want to control the effect like useEffect in react.
+
+username=signal('Arslan');
+age=signal(27);
+
+effect(()=>{
+    console.log(this.username);
+})
+untrack is used if dont want to run effect on the change of user name;
+effect(()=>{
+    untracked(() => this.username())   
+}); now if username is change effect will not run.
+
+update();
+
+count=signal(10)
+this.count.set(20);
+
+now what this updated 
+this.count.update(value=>value+1); // this provides the old value   

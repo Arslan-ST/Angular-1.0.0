@@ -1,0 +1,42 @@
+conditionals 
+Angular may conditional rendering
+isLoggedIn=true;
+@if(isLoggedIn){
+<h2>Welcome Arslan</h2>
+}
+
+@if (isLoggedIn) {
+  <h2>Welcome Arslan</h2>
+} @else {
+  <h2>Please login</h2>
+}
+
+
+loops
+users=['Arslan','Ahmad','Ali'];
+@for(user of users; track user){ here track work as the key of the user
+    <p>{{user}}</p>
+}
+
+
+users = [
+  { id: 1, name: 'Arslan' },
+  { id: 2, name: 'Ali' },
+  { id: 3, name: 'Ahmed' }
+];
+
+@for(user of users; track user.id){
+    <p>{{$index}} - {{user.name}}</p>
+}@empty{
+    <p>No users Found</p>
+}
+$index current index
+$count count of array length
+$first $last $even $odd
+
+ng-container
+is almost equal to React Fragment <></>
+
+<ng-container>
+    left Html in it
+</ng-container>

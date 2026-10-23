@@ -1,0 +1,9 @@
+Component lifecycle is Angular can perform which operations 
+from creating of the component till its destroy.
+
+initilization -> rendring -> updates ->destroy
+
+ngOnInit =useEffect(()=>{},[]);
+ngOnChanges=props state change ko observe krna 
+ngAfterViewInit()=Dom/view ready ke baad ka work
+ngonDestroy=useEffect cleaup function 
