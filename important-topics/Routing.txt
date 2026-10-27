@@ -1,0 +1,61 @@
+In angular Router is built in.
+Suppose you have three pages in app 
+/ Home Component
+/users UsersComponent
+/settings SettingComponent
+
+app.routes.ts
+
+export const routes:Routes={
+    {path:''
+    component:HomeComponent
+    },
+      {
+    path: 'users',
+    component: UsersComponent
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent
+  }
+}
+
+<nav>
+  <a href="/">Home</a>
+  <a href="/users">Users</a>
+  <a href="/settings">Settings</a>
+</nav>
+
+<router-outlet />
+            router-outlet ek placeholder ha jahan current URL ke mutabik component render hoga.
+
+
+Nested routes
+            export const routes: Routes = [
+            {
+                path: 'dashboard',
+                component: DashboardLayout,
+                children: [
+                { path: '', component: DashboardHome },
+                { path: 'users', component: Users },
+                { path: 'settings', component: Settings }
+                ]
+            }
+            ];               
+Lazy in angular is quite intresting. 
+ import {Routes} from '@angular/core';
+ export const routes:Routes=[
+    path:'',
+    loadComponent:()=>import('./hom/home').then(m=>m.Home)
+ ]
+            
+there are two things loadComponent and loadChildren
+loadComponent lazy load a route
+loadChildren lazy load the whole group of routes
+
+
+Route Guards:
+              Route Guards ka kaam decide krna ke user kisi route pr navigate kr skta hai ya nai.
+Suppose in our angular app there is /dashboard page hai. Tum chahte ho k sirf logged-in users hi is page 
+page ko open kr saken.
+

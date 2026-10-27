@@ -1,0 +1,8 @@
+<div #slider (mousedown)="mouseDown($event)" (mousemove)="mouseMove($event)" (mouseup)="mouseUp($event)" class="flex {{isDragging()?'dragging':''}} slider overflow-hidden ">
+    @for (post of posts(); track $index) {
+    <div class="shrink-0 slide">
+        
+        <img draggable="false" class="w-full" src="{{ post }}" alt="">
+    </div>
+    }
+</div>

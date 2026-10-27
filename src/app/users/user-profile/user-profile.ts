@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, output, signal, effect } from '@angular/core';
 export interface userInterface {
   name: string,
   id: string,
@@ -11,15 +11,24 @@ export interface userInterface {
 })
 export class UserProfile {
   user = input<userInterface>();
+  userInput = signal('');
   deleteUser = output<string>();
   updateUser = output<userInterface>();
+  edit = signal<boolean>(false)
+
   delete() {
     this.deleteUser.emit(this.user()!.id);
   }
-  // update(value: string) {
-  //   this.updateUser.emit({
-  //     name: value,
-  //     id: this.user()!.id
-  //   })
-  // }
+  update(value: string) {
+    this.edit.set(false)
+    this.updateUser.emit({
+      name: value,
+      id: this.user()!.id
+    })
+  }
+  constructor() {
+    effect(() => {
+      this.userInput.set(this.user()?.name ?? '');
+    });
+  }
 }

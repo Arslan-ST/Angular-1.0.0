@@ -18,6 +18,11 @@ export class Users {
   deleteUser(id: string) {
     if(id.trim()=='')return;
     this.users.update((prev) => prev.filter((e) => e.id !== id))
-
+  }
+  updateUser(user:userInterface){
+      this.users.update((prev)=>prev.map((e)=>{
+            if(e.id!==user.id)return e;
+            return user
+      }))
   }
 } 

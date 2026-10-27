@@ -1,0 +1,23 @@
+Services:
+        Service is seprate file class/file hoti hain jahan tum shared data aur us say related logic rkh sktay ho.
+Imagine ek shared cupboard hai jismay users list rakhi hai. Jo Component regeisterd service use krta ha wo usi 
+shared state ko access kr skta ha.
+
+export class UserService{
+    getUsers(){
+        return ['Arslan','Ali']
+    }
+} simple class
+
+
+import {Injectable} from @angular
+
+@Injectable({
+    providedIn:'root'
+});
+export class UserService{
+    getUsers(){
+        return ['Arslan','Ali']
+    }
+} @Injectable Angular ko batata ha kai is class ko angular ke Dependency Injection system k sath use kia ja skta ha.
+

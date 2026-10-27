@@ -1,0 +1,17 @@
+.slider {
+  display: flex;
+  width: 100%;
+  scroll-behavior: auto;
+}
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/0.35;
+  object-fit: cover;
+}

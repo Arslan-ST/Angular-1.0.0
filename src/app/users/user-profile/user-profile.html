@@ -1,4 +1,41 @@
-<div class="flex items-center">
-    <p>{{this.user()!.name}}</p>
-    <button (click)="this.delete()">Delete</button>
+<div class="flex items-center gap-4 rounded-xl border border-gray-200
+         bg-white p-4 shadow-sm transition-all duration-200
+         hover:border-blue-300 hover:shadow-md">
+    <div class="min-w-0 flex-1">
+        @if (this.edit()) {
+        <input type="text" (change)="userInput.set($any($event.target).value)" [value]="userInput()" class="w-full rounded-lg border border-gray-300 px-3 py-2
+               text-sm outline-none focus:border-blue-500
+               focus:ring-2 focus:ring-blue-100" />
+        } @else {
+        <p class="truncate text-base font-semibold text-gray-800">
+            {{ this.user()!.name }}
+        </p>
+        }
+
+    </div>
+
+    <div>
+        <button (click)="this.delete()" class="rounded-lg p-2 text-gray-400 transition
+           hover:bg-red-50 hover:text-red-600
+           focus:outline-none focus:ring-2 focus:ring-red-200" aria-label="Delete todo" title="Delete todo">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6 7h12m-10 0V5h8v2m-9 0 1 13h8l1-13M10 11v5m4-5v5" />
+            </svg>
+        </button>
+
+        @if (this.edit()) {
+        <button (click)="update(userInput())" class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium
+               text-white transition hover:bg-blue-700">
+            Save
+        </button>
+        } @else {
+        <button (click)="edit.set(true)" class="rounded-lg p-2 text-gray-400 transition
+               hover:bg-blue-50 hover:text-blue-600" aria-label="Edit todo" title="Edit todo">
+            Edit
+        </button>
+        }
+    </div>
+
 </div>
